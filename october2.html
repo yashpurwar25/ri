@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>October</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= BODY ================= */
+body{
+margin:0;
+height:100vh;
+font-family:Poppins, Arial, sans-serif;
+color:white;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+
+/* Pleasant cinematic gradient */
+background:linear-gradient(-45deg,#ff7e5f,#feb47b,#ff758c,#ff7eb3);
+background-size:400% 400%;
+animation:bgmove 16s ease infinite;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* Cinematic light glow */
+body::before{
+content:"";
+position:absolute;
+width:170%;
+height:170%;
+background:radial-gradient(circle,
+rgba(255,255,255,0.18),
+transparent 70%);
+animation:lightmove 20s linear infinite;
+z-index:0;
+}
+
+@keyframes lightmove{
+0%{transform:translate(-25%,-25%);}
+50%{transform:translate(25%,25%);}
+100%{transform:translate(-25%,-25%);}
+}
+
+/* Floating animation */
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+/* ================= BUBBLES ================= */
+.bubble{
+position:absolute;
+width:220px;
+height:220px;
+border-radius:50%;
+background:rgba(255,255,255,0.25);
+backdrop-filter:blur(12px);
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:22px;
+font-size:15px;
+line-height:1.4;
+box-shadow:0 0 25px rgba(255,255,255,0.5);
+animation:float 7s ease-in-out infinite;
+z-index:2;
+}
+
+/* Positions */
+.b1{top:70px; left:110px;}
+.b2{top:70px; right:110px;}
+.b3{bottom:150px; left:150px;}
+.b4{bottom:150px; right:150px;}
+
+/* ================= CENTER PANEL ================= */
+.center{
+position:absolute;
+bottom:40px;
+background:rgba(0,0,0,0.75);
+padding:40px 60px;
+border-radius:25px;
+text-align:center;
+z-index:3;
+backdrop-filter:blur(10px);
+box-shadow:0 0 25px rgba(0,0,0,0.7);
+}
+
+h1{
+margin-bottom:15px;
+letter-spacing:2px;
+color:#ffe066;
+}
+
+/* Buttons */
+button{
+padding:10px 22px;
+border:none;
+border-radius:20px;
+margin:8px;
+cursor:pointer;
+font-weight:600;
+background:#ffe066;
+color:#333;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+background:#ffd43b;
+}
+
+/* ================= IMAGE ================= */
+.oct-img{
+position:absolute;
+top:35%;
+left:50%;
+transform:translate(-50%,-50%) rotate(-6deg);
+width:260px;
+opacity:0.9;
+pointer-events:none;
+z-index:1;
+animation:float 9s ease-in-out infinite;
+filter:drop-shadow(0 10px 25px rgba(0,0,0,0.6));
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="pal.mp3" type="audio/mpeg">
+</audio>
+
+<!-- IMAGE -->
+<img src="C.jpg" class="oct-img">
+
+<!-- BUBBLES -->
+<div class="bubble b1">
+thoda sa khatta meetha sa month tha ye like fr somethings were giving happiness
+</div>
+
+<div class="bubble b2">
+But there were few fights too
+</div>
+
+<div class="bubble b3">
+But ye kaha jata hai na jaha ladaiyan hoti h vaha pyaar bhi hota h
+</div>
+
+<div class="bubble b4">
+is month k last me mai ganja bhi hua tha tho hehe
+</div>
+
+<!-- CENTER -->
+<div class="center">
+<h1>October 🍁</h1>
+
+<button onclick="playMusic()">▶ Play Music</button><br>
+
+<button onclick="goBack()">← Back</button>
+<button onclick="goNext()">Next →</button>
+</div>
+
+<script>
+
+const bgMusic = document.getElementById("bgMusic");
+
+function playMusic(){
+bgMusic.play();
+}
+
+function goBack(){
+location.href="september2.html";
+}
+
+function goNext(){
+location.href="november2.html";
+}
+
+</script>
+
+</body>
+</html>

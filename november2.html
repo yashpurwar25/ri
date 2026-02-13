@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>November</title>
+
+<style>
+
+/* ---------- BODY ---------- */
+body{
+margin:0;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+color:white;
+
+/* dynamic cinematic gradient */
+background:linear-gradient(-45deg,#1f1c2c,#928dab,#232526,#414345);
+background-size:400% 400%;
+animation:bgMove 15s ease infinite;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* soft moving glow layer */
+body::after{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle, rgba(255,255,255,0.08) 10%, transparent 40%);
+animation:glowMove 18s linear infinite;
+z-index:0;
+}
+
+@keyframes glowMove{
+0%{transform:translate(-10%,-10%);}
+50%{transform:translate(10%,10%);}
+100%{transform:translate(-10%,-10%);}
+}
+
+/* ---------- BACKGROUND IMAGE ---------- */
+.bgimg{
+position:absolute;
+bottom:20px;       /* keeps away from center box */
+right:40px;
+width:240px;
+opacity:0.25;
+z-index:1;
+pointer-events:none;
+}
+
+/* ---------- NOTES ---------- */
+.note{
+background:#ffeb3b;
+color:black;
+padding:20px;
+width:220px;
+border-radius:14px;
+position:absolute;
+font-size:14px;
+line-height:1.4;
+box-shadow:0 8px 20px rgba(0,0,0,0.5);
+z-index:2;
+animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0px) rotate(-3deg);}
+50%{transform:translateY(-12px) rotate(2deg);}
+}
+
+.n1{top:80px; left:100px;}
+.n2{top:80px; right:100px; animation-delay:1s;}
+.n3{bottom:120px; left:150px; animation-delay:2s;}
+.n4{bottom:120px; right:150px; animation-delay:3s;}
+
+/* ---------- CENTER BOX ---------- */
+.center{
+position:relative;
+z-index:3;
+background:rgba(0,0,0,0.7);
+padding:40px 60px;
+border-radius:25px;
+text-align:center;
+backdrop-filter:blur(10px);
+box-shadow:0 0 25px rgba(0,0,0,0.7);
+}
+
+h1{
+margin-top:0;
+font-size:40px;
+letter-spacing:2px;
+}
+
+/* ---------- BUTTONS ---------- */
+button{
+padding:10px 22px;
+border:none;
+border-radius:20px;
+margin:8px;
+cursor:pointer;
+background:#ff6f91;
+color:white;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+background:#ff4f75;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- background image -->
+<img src="D.jpg" class="bgimg">
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="ordinary.mp3">
+</audio>
+
+<!-- NOTES -->
+<div class="note n1">
+Month of stress!
+</div>
+
+<div class="note n2">
+had a fight because of that chocolate uddhav gave u
+</div>
+
+<div class="note n3">
+I know like mai bohot ladta hu and i say ki aap is ldke se kyu bolti ho etc etc but riiii i cant see u with some other guy like fr mera dil jalta h!
+</div>
+
+<div class="note n4">
+Vatsal bhaiya k naam se bhale hi mai kitna bhi chidha lu but my heart knows what i actually feel and i do it for fun
+</div>
+
+<!-- CENTER CONTROLS -->
+<div class="center">
+<h1>November</h1>
+
+<button onclick="playMusic()">▶ Play Music</button><br>
+
+<button onclick="goBack()">← Back</button>
+<button onclick="goNext()">Next →</button>
+</div>
+
+<script>
+
+function playMusic(){
+document.getElementById("bgMusic").play();
+}
+
+function goBack(){
+location.href="october2.html";
+}
+
+function goNext(){
+location.href="december2.html";
+}
+
+</script>
+
+</body>
+</html>

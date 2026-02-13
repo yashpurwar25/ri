@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>February</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  height:100vh;
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(-45deg,#1e3c72,#2a5298,#6a11cb,#2575fc);
+  background-size:400% 400%;
+  animation: bgmove 10s ease infinite;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  overflow:hidden;
+}
+
+/* Animated Background */
+@keyframes bgmove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Floating Effect */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-18px);}
+  100%{transform:translateY(0);}
+}
+
+/* Moon Image */
+.moon{
+  position:absolute;
+  width:180px;
+  top:40px;
+  left:50%;
+  transform:translateX(-50%);
+  opacity:0.75;
+  animation: float 6s ease-in-out infinite;
+  z-index:0;
+  pointer-events:none;
+}
+
+/* Center Box */
+.center{
+  background:rgba(0,0,0,0.55);
+  padding:45px 70px;
+  border-radius:30px;
+  text-align:center;
+  box-shadow:0 0 35px rgba(255,255,255,0.4);
+  z-index:5;
+}
+
+h1{
+  font-size:46px;
+  color:#ffd86b;
+  letter-spacing:2px;
+}
+
+/* Buttons */
+button{
+  padding:12px 28px;
+  margin:10px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:16px;
+  background:#ffd86b;
+  color:#333;
+  font-weight:600;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ffca28;
+  transform:scale(1.05);
+}
+
+/* Clouds */
+.cloud{
+  position:absolute;
+  background:rgba(255,255,255,0.95);
+  color:#6a1b9a;
+  padding:22px 34px;
+  border-radius:70px;
+  box-shadow:0 0 25px rgba(255,255,255,0.9);
+  animation: float 5s ease-in-out infinite;
+  max-width:280px;
+  text-align:center;
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* Small tilt for organic look */
+.c1{ top:60px; left:60px; transform:rotate(-3deg); }
+.c2{ top:60px; right:60px; transform:rotate(3deg); }
+.c3{ bottom:60px; left:60px; transform:rotate(2deg); }
+.c4{ bottom:60px; right:60px; transform:rotate(-2deg); }
+
+</style>
+</head>
+
+<body>
+
+<!-- Moon Image -->
+<img src="moon.png" class="moon">
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="wanna be yours.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Clouds -->
+<div class="cloud c1">
+Sent a random Snapchat request<br>
+and somehow found my forever person 💞
+</div>
+
+<div class="cloud c2">
+Fell for you in our very first<br>
+conversation itself 💘
+</div>
+
+<div class="cloud c3">
+That first night I couldn’t sleep,<br>
+kept thinking about you 🌙
+</div>
+
+<div class="cloud c4">
+You became my sunshine<br>
+in the darkest phase ☀️
+</div>
+
+<!-- Center -->
+<div class="center">
+  <h1>February</h1>
+
+  <button onclick="playMusic()">▶ Play Music</button><br>
+
+  <button onclick="goBack()">← Back</button>
+  <button onclick="goNext()">Next →</button>
+</div>
+
+<script>
+function playMusic(){
+  document.getElementById("bgMusic").play();
+}
+
+function goNext(){
+  window.location.href="march2.html";
+}
+
+function goBack(){
+  window.location.href="index2.html";
+}
+</script>
+
+</body>
+</html>

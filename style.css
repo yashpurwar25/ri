@@ -1,0 +1,119 @@
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(to bottom right, #1e3c72, #2a5298, #fbc531);
+  font-family: "Segoe UI", sans-serif;
+  color:white;
+  overflow:hidden;
+}
+
+.container{
+  background: rgba(0,0,0,0.4);
+  padding:50px;
+  border-radius:25px;
+  text-align:center;
+  animation: fadeIn 8s ease;
+}
+
+h1{
+  font-size:48px;
+  margin-bottom:15px;
+}
+
+.line1{
+  font-size:18px;
+  opacity:0.9;
+}
+
+.line2{
+  font-size:20px;
+  margin-top:10px;
+  font-weight:600;
+}
+
+button{
+  margin-top:30px;
+  padding:12px 30px;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+  cursor:pointer;
+  background:white;
+  color:#2a5298;
+}
+
+button:hover{
+  background:#f1f1f1;
+}
+
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  padding:10px 14px;
+  border-radius:50%;
+  font-size:18px;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+.bg-img{
+  position:absolute;
+  width:120px;
+  opacity:0.35;
+  z-index:0;
+  animation: floatImg 6s ease-in-out infinite;
+}
+
+.img1{ top:80px; left:80px; }
+.img2{ bottom:120px; right:120px; }
+.img3{ top:200px; right:200px; }
+.img4{ bottom:200px; left:200px; }
+
+@keyframes floatImg{
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-20px); }
+  100%{ transform:translateY(0); }
+}
+/* Floating background images */
+.bg-img{
+  position:absolute;
+  width:120px;
+  opacity:0.4;
+  z-index:0;
+  animation: floatImg 6s ease-in-out infinite;
+}
+
+.img1{ top:80px; left:120px; }
+.img2{ bottom:120px; right:150px; }
+.img3{ top:200px; right:200px; }
+.img4{ bottom:200px; left:200px; }
+
+@keyframes floatImg{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
+  100%{transform:translateY(0);}
+}
+
+/* Make sure center box stays on top */
+.box{
+  position:relative;
+  z-index:2;
+}
+/* Moon Image */
+.moon{
+  position:absolute;
+  width:220px;
+  height:auto;
+  top:80px;
+  right:100px;
+  opacity:1;
+  z-index:5;
+  pointer-events:none;
+  animation: float 5s ease-in-out infinite;
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>August</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+font-family:Poppins,sans-serif;
+background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+background-size:400% 400%;
+animation:bgmove 12s ease infinite;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+overflow:hidden;
+position:relative;
+}
+
+/* Animated Background */
+@keyframes bgmove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* soft moving light effect */
+body::before{
+content:"";
+position:absolute;
+width:150%;
+height:150%;
+background:radial-gradient(circle,rgba(255,255,255,0.25),transparent 60%);
+animation:lightMove 14s linear infinite;
+z-index:0;
+}
+
+@keyframes lightMove{
+0%{transform:translate(-20%,-20%)}
+50%{transform:translate(20%,20%)}
+100%{transform:translate(-20%,-20%)}
+}
+
+/* Floating animation */
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-18px)}
+100%{transform:translateY(0)}
+}
+
+/* Memory Bubbles */
+.bubble{
+position:absolute;
+background:rgba(255,255,255,0.25);
+backdrop-filter:blur(10px);
+padding:22px 28px;
+border-radius:30px;
+width:250px;
+box-shadow:0 0 25px rgba(255,255,255,0.4);
+animation:float 6s ease-in-out infinite;
+text-align:center;
+color:#2d0c57;
+font-size:14px;
+z-index:2;
+}
+
+/* Positions (unchanged layout idea) */
+.b1{top:120px; left:150px;}
+.b2{top:200px; right:150px;}
+.b3{bottom:200px; left:220px;}
+.b4{bottom:120px; right:220px;}
+
+/* Center Panel */
+.center{
+background:rgba(0,0,0,0.6);
+padding:45px 70px;
+border-radius:30px;
+text-align:center;
+z-index:3;
+}
+
+h1{
+font-size:46px;
+color:#ffe066;
+letter-spacing:2px;
+}
+
+button{
+padding:12px 26px;
+margin:10px;
+border:none;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+background:#ffe066;
+color:#333;
+font-weight:600;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:#ffd43b;
+}
+
+/* IMAGE (does NOT overlap bubbles) */
+.romantic-img{
+position:absolute;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:380px;
+opacity:0.9;
+z-index:1;
+pointer-events:none;
+animation:float 7s ease-in-out infinite;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="swift.mp3">
+</audio>
+
+<!-- IMAGE -->
+<img src="B.jpg" class="romantic-img">
+
+<!-- Memory Bubbles -->
+<div class="bubble b1">
+fr just wanted to leave college kisi cheez me mn nhi lgta tha bs missed u like a lot
+</div>
+
+<div class="bubble b2">
+Still remember how i begged to ur friend to make u unblock me
+</div>
+
+<div class="bubble b3">
+And finally one day(the luckiest day of my life) u came back to my life!(august being special because vinu k bday bhiii thaaaa!!!!)
+</div>
+
+<div class="bubble b4">
+a few days later u blocked me again but deep down i knew u will never really leave me!
+</div>
+
+<!-- Center -->
+<div class="center">
+<h1>August 🌻</h1>
+
+<button onclick="playMusic()">▶ Play Music</button><br>
+
+<button onclick="goBack()">← Back</button>
+<button onclick="goNext()">Next →</button>
+</div>
+
+<script>
+
+const bgMusic = document.getElementById("bgMusic");
+
+function playMusic(){
+bgMusic.play();
+}
+
+function goBack(){
+location.href="july2.html";
+}
+
+function goNext(){
+location.href="september2.html";
+}
+
+</script>
+
+</body>
+</html>

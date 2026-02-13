@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>December</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+font-family:Poppins,sans-serif;
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1d2671);
+background-size:400% 400%;
+animation:bgmove 12s ease infinite;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+overflow:hidden;
+}
+
+/* Animated Background */
+@keyframes bgmove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* Snow */
+.snow{
+position:absolute;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+opacity:0.8;
+animation: fall linear infinite;
+z-index:1;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10px);}
+100%{transform:translateY(110vh);}
+}
+
+/* ---------- IMAGE ---------- */
+.bgimg{
+position:absolute;
+bottom:20px;
+right:40px;
+width:260px;
+opacity:0.25;
+z-index:1;
+pointer-events:none;
+filter:drop-shadow(0 0 15px rgba(255,255,255,0.4));
+}
+
+/* Cards */
+.card{
+position:absolute;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+padding:25px;
+width:240px;
+border-radius:22px;
+box-shadow:0 0 20px rgba(255,255,255,0.3);
+z-index:2;
+}
+
+.c1{top:120px; left:180px;}
+.c2{top:220px; right:200px;}
+.c3{bottom:200px; left:260px;}
+.c4{bottom:120px; right:260px;}
+
+/* Center Panel */
+.center{
+background:rgba(0,0,0,0.6);
+padding:45px 70px;
+border-radius:30px;
+text-align:center;
+z-index:3;
+}
+
+h1{
+font-size:46px;
+color:#aeeaff;
+letter-spacing:2px;
+}
+
+button{
+padding:12px 26px;
+margin:10px;
+border:none;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+background:#aeeaff;
+color:#033;
+font-weight:600;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:#8dd8ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- IMAGE -->
+<img src="E.jpg" class="bgimg">
+
+<!-- Snowflakes -->
+<div class="snow" style="left:10%;animation-duration:6s"></div>
+<div class="snow" style="left:25%;animation-duration:8s"></div>
+<div class="snow" style="left:40%;animation-duration:7s"></div>
+<div class="snow" style="left:55%;animation-duration:9s"></div>
+<div class="snow" style="left:70%;animation-duration:6s"></div>
+<div class="snow" style="left:85%;animation-duration:8s"></div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="girl.mp3">
+</audio>
+
+<!-- Cards -->
+<div class="card c1">The last month of the best year of my life</div>
+<div class="card c2">We fought we reconciled,thats what we call family isnt it?</div>
+<div class="card c3">and rishi fr mere paas red ya green pehenne ko nhi tha</div>
+<div class="card c4">
+You are my sunshine my only sunshine u make me happy when skies are grey u dont know dear how much i love you and i beg not to take my sunshine away
+</div>
+
+<!-- Center -->
+<div class="center">
+<h1>December ❄</h1>
+
+<button onclick="playMusic()">▶ Play Music</button><br>
+
+<button onclick="goBack()">← Back</button>
+<button onclick="goNext()">Next →</button>
+</div>
+
+<script>
+function playMusic(){
+document.getElementById("bgMusic").play();
+}
+function goBack(){location.href="november2.html";}
+function goNext(){location.href="january2.html";}
+</script>
+
+</body>
+</html>

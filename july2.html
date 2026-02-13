@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>July</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ---------- BODY ---------- */
+body{
+margin:0;
+height:100vh;
+font-family:'Poppins',sans-serif;
+color:white;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+
+background:linear-gradient(-45deg,#0f0c29,#302b63,#1a1a2e,#000);
+background-size:400% 400%;
+animation:bgmove 18s ease infinite;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* cinematic fade */
+body{animation:fadeIn 1.8s ease, bgmove 18s ease infinite;}
+@keyframes fadeIn{
+from{opacity:0; transform:scale(1.05);}
+to{opacity:1; transform:scale(1);}
+}
+
+/* ---------- FLOATING MEMORY IMAGE ---------- */
+.memoryImg{
+position:absolute;
+left:50%;
+top:15%;
+transform:translateX(-50%) rotate(-6deg);
+width:300px;
+opacity:0.28;
+filter:grayscale(60%) blur(0.5px);
+border-radius:18px;
+animation:floatImg 10s ease-in-out infinite;
+z-index:1;
+}
+
+@keyframes floatImg{
+0%{transform:translateX(-50%) translateY(0) rotate(-6deg);}
+50%{transform:translateX(-50%) translateY(-25px) rotate(-4deg);}
+100%{transform:translateX(-50%) translateY(0) rotate(-6deg);}
+}
+
+/* ---------- TEXT MEMORY CARDS ---------- */
+.card{
+position:absolute;
+max-width:260px;
+padding:22px;
+border-radius:28px;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(14px);
+
+font-size:15px;
+line-height:1.6;
+font-weight:300;
+
+box-shadow:
+0 0 25px rgba(0,0,0,0.7),
+inset 0 0 15px rgba(255,255,255,0.08);
+
+transition:.4s;
+z-index:2;
+}
+
+/* dynamic glowing text */
+.card:hover{
+transform:scale(1.06) rotate(0deg);
+box-shadow:0 0 35px rgba(200,200,255,0.4);
+}
+
+/* scattered emotional placement */
+.c1{ top:80px; left:80px; transform:rotate(-8deg);}
+.c2{ top:240px; right:120px; transform:rotate(7deg);}
+.c3{ bottom:180px; left:200px; transform:rotate(5deg);}
+.c4{ bottom:120px; right:220px; transform:rotate(-6deg);}
+
+/* ---------- CENTER PANEL ---------- */
+.center{
+position:absolute;
+bottom:35px;
+background:rgba(0,0,0,0.65);
+padding:28px 45px;
+border-radius:22px;
+text-align:center;
+box-shadow:0 0 30px rgba(0,0,0,0.9);
+z-index:3;
+}
+
+h1{
+letter-spacing:4px;
+font-weight:500;
+color:#d6d6ff;
+text-shadow:0 0 12px rgba(255,255,255,0.4);
+}
+
+/* ---------- BUTTONS ---------- */
+button{
+padding:10px 22px;
+border:none;
+border-radius:20px;
+margin:6px;
+cursor:pointer;
+font-weight:500;
+background:#d6d6ff;
+color:#111;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+background:#b0b0ff;
+}
+
+/* ---------- FALLING PARTICLES ---------- */
+.particle{
+position:absolute;
+width:3px;
+height:14px;
+background:rgba(255,255,255,0.35);
+border-radius:2px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);opacity:0;}
+20%{opacity:.8;}
+100%{transform:translateY(110vh);opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING IMAGE -->
+<img src="depress.jpg" class="memoryImg">
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="paro.mp3">
+</audio>
+
+<!-- MEMORY CARDS -->
+<div class="card c1">
+Well thought of skipping this month earlier but yeah i did a mistake so i should admit it too
+</div>
+
+<div class="card c2">
+This month was for sure the worst month of my life
+</div>
+
+<div class="card c3">
+Whatever i did was never intentional till this day why i did this
+</div>
+
+<div class="card c4">
+After 2 years like fr i cried a lot i was broken shattered.....please ri dont leave me
+</div>
+
+<!-- CENTER -->
+<div class="center">
+<h1>July</h1>
+
+<button onclick="playMusic()">▶ Play Music</button><br>
+
+<button onclick="goBack()">← Back</button>
+<button onclick="goNext()">Next →</button>
+</div>
+
+<script>
+
+/* falling cinematic particles */
+for(let i=0;i<50;i++){
+let p=document.createElement("div");
+p.className="particle";
+p.style.left=Math.random()*100+"vw";
+p.style.animationDuration=(6+Math.random()*7)+"s";
+p.style.animationDelay=Math.random()*5+"s";
+document.body.appendChild(p);
+}
+
+function playMusic(){ bgMusic.play(); }
+function goBack(){ location.href="june2.html"; }
+function goNext(){ location.href="august2.html"; }
+
+</script>
+
+</body>
+</html>

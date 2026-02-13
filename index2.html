@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>One Year Completed</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(-45deg,#ff9a9e,#fad0c4,#a18cd1,#fbc2eb,#84fab0);
+  background-size:400% 400%;
+  animation: bgmove 10s ease infinite;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Background Animation */
+@keyframes bgmove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Floating Images */
+.bg-img{
+  position:absolute;
+  width:120px;
+  opacity:0.4;
+  animation: floatImg 6s ease-in-out infinite;
+}
+
+.img1{ top:80px; left:100px; transform:rotate(-15deg);}
+.img2{ bottom:120px; right:150px; transform:rotate(12deg);}
+.img3{ top:200px; right:200px; transform:rotate(-8deg);}
+.img4{ bottom:200px; left:200px; transform:rotate(10deg);}
+
+@keyframes floatImg{
+  0%{transform:translateY(0) rotate(var(--r));}
+  50%{transform:translateY(-25px) rotate(var(--r));}
+  100%{transform:translateY(0) rotate(var(--r));}
+}
+
+/* Clouds */
+.cloud{
+  position:absolute;
+  top:30px;
+  left:30px;
+  background:white;
+  padding:18px 30px;
+  border-radius:50px;
+  font-style:italic;
+  box-shadow:0 0 20px rgba(255,255,255,0.8);
+}
+
+.cloud2{
+  position:absolute;
+  bottom:30px;
+  right:30px;
+  background:white;
+  padding:18px 30px;
+  border-radius:50px;
+  font-style:italic;
+  box-shadow:0 0 20px rgba(255,255,255,0.8);
+}
+
+/* Center Box */
+.box{
+  background:rgba(0,0,0,0.55);
+  padding:45px 60px;
+  border-radius:30px;
+  text-align:center;
+  color:white;
+  box-shadow:0 0 30px rgba(255,255,255,0.4);
+  z-index:2;
+}
+
+h1{
+  font-size:42px;
+  color:#ffeaa7;
+}
+
+p{
+  font-size:18px;
+  margin-bottom:25px;
+}
+
+button{
+  padding:12px 35px;
+  border:none;
+  border-radius:30px;
+  background:#ffeaa7;
+  font-size:16px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ffdd59;
+  transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND IMAGES -->
+<img src="heart.jpg" class="bg-img img1" style="--r:-15deg;">
+<img src="guddu.jpg" class="bg-img img2" style="--r:12deg;">
+
+<!-- CLOUDS -->
+<div class="cloud">Moon is beautiful, isn’t it? 🌙</div>
+<div class="cloud2">Cutu Putu Rishi 💛</div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- CENTER -->
+<div class="box">
+  <h1>One Beautiful Year 🌤️</h1>
+  <p>For Rishi — My Sunshine ☀️</p>
+
+  <button onclick="playMusic()">▶ Play Music</button><br><br>
+
+  <button onclick="location.href='feb2.html'">
+    Let the Journey Begin
+  </button>
+</div>
+
+<script>
+function playMusic(){
+  document.getElementById("bgMusic").play();
+}
+</script>
+
+</body>
+</html>

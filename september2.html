@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>September</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= BODY ================= */
+body{
+margin:0;
+height:100vh;
+font-family:Poppins, Arial, sans-serif;
+color:white;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+
+/* Dynamic animated gradient */
+background:linear-gradient(-45deg,#141e30,#243b55,#0f2027,#2c5364);
+background-size:400% 400%;
+animation:bgmove 15s ease infinite;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* Soft cinematic glow layer */
+body::before{
+content:"";
+position:absolute;
+width:160%;
+height:160%;
+background:radial-gradient(circle,
+rgba(255,255,255,0.15),
+transparent 70%);
+animation:glowmove 18s linear infinite;
+z-index:0;
+}
+
+@keyframes glowmove{
+0%{transform:translate(-20%,-20%);}
+50%{transform:translate(20%,20%);}
+100%{transform:translate(-20%,-20%);}
+}
+
+/* Floating animation */
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
+}
+
+/* ================= MEMORY CARDS ================= */
+.photo{
+position:absolute;
+background:rgba(255,255,255,0.95);
+color:#222;
+padding:18px;
+width:220px;
+border-radius:14px;
+box-shadow:0 12px 30px rgba(0,0,0,0.6);
+font-size:14px;
+line-height:1.4;
+animation:float 6s ease-in-out infinite;
+z-index:2;
+}
+
+/* Balanced layout */
+.p1{top:70px; left:120px; transform:rotate(-6deg);}
+.p2{top:130px; right:120px; transform:rotate(7deg);}
+.p3{bottom:150px; left:150px; transform:rotate(-5deg);}
+.p4{bottom:140px; right:150px; transform:rotate(6deg);}
+
+/* ================= CENTER PANEL ================= */
+.center{
+position:absolute;
+bottom:40px;
+background:rgba(0,0,0,0.75);
+padding:40px 60px;
+border-radius:25px;
+text-align:center;
+z-index:3;
+backdrop-filter:blur(10px);
+box-shadow:0 0 25px rgba(0,0,0,0.8);
+}
+
+h1{
+margin:0 0 15px 0;
+letter-spacing:2px;
+color:#ffd166;
+}
+
+/* ================= BUTTONS ================= */
+button{
+padding:10px 22px;
+border:none;
+border-radius:20px;
+margin:8px;
+cursor:pointer;
+font-weight:600;
+background:#ffd166;
+color:#222;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+background:#ffe08a;
+}
+
+/* ================= CAKE IMAGE ================= */
+.cake-img{
+position:absolute;
+top:30px;
+left:50%;
+transform:translateX(-50%) rotate(-4deg);
+width:240px;
+z-index:1;
+pointer-events:none;
+animation:float 8s ease-in-out infinite;
+filter:drop-shadow(0 10px 25px rgba(0,0,0,0.6));
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="Sahiba.mp3" type="audio/mpeg">
+</audio>
+
+<!-- CAKE IMAGE -->
+<img src="cake.jpg" class="cake-img">
+
+<!-- MEMORY CARDS -->
+<div class="photo p1">
+The birth month of my guddu puddu cutu putu!!!!!!!!!1
+</div>
+
+<div class="photo p2">
+ummm.....september yeah so a great month fr i tried my best to do something for u that could make u feel better tho it was not good
+</div>
+
+<div class="photo p3">
+A few days later u blocked me then unblocked me on 15 september like u blocking me hurted this time
+</div>
+
+<div class="photo p4">
+Tho i knew u blocked me for my good u thought that i was getting too attached
+</div>
+
+<!-- CENTER CONTROLS -->
+<div class="center">
+<h1>September 🎂</h1>
+
+<button onclick="playMusic()">▶ Play Music</button><br>
+
+<button onclick="goBack()">← Back</button>
+<button onclick="goNext()">Next →</button>
+</div>
+
+<script>
+
+const bgMusic = document.getElementById("bgMusic");
+
+function playMusic(){
+bgMusic.play();
+}
+
+function goBack(){
+location.href="august2.html";
+}
+
+function goNext(){
+location.href="october2.html";
+}
+
+</script>
+
+</body>
+</html>

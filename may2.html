@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>May</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ---------- BODY ---------- */
+body{
+margin:0;
+height:100vh;
+font-family:'Poppins',sans-serif;
+color:white;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+
+/* Dynamic romantic gradient */
+background:linear-gradient(-45deg,#ff758c,#ff7eb3,#fad0c4,#ffd1ff,#ffc3a0);
+background-size:500% 500%;
+animation:bgMove 14s ease infinite;
+}
+
+/* moving gradient */
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* ---------- FLOATING LIGHT IMAGE ---------- */
+.lightImg{
+position:absolute;
+width:260px;
+opacity:0.45;
+top:8%;
+right:6%;
+animation:floatLight 7s ease-in-out infinite;
+z-index:0;
+}
+
+@keyframes floatLight{
+0%{transform:translateY(0px) rotate(-6deg);}
+50%{transform:translateY(-25px) rotate(4deg);}
+100%{transform:translateY(0px) rotate(-6deg);}
+}
+
+/* ---------- GLOW PARTICLES ---------- */
+.spark{
+position:absolute;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+opacity:.7;
+animation:rise linear infinite;
+}
+
+@keyframes rise{
+0%{transform:translateY(100vh);opacity:0;}
+30%{opacity:1;}
+100%{transform:translateY(-10vh);opacity:0;}
+}
+
+/* ---------- TEXT NOTES ---------- */
+.note{
+position:absolute;
+width:240px;
+padding:22px;
+border-radius:24px;
+
+background:rgba(255,255,255,0.18);
+backdrop-filter:blur(12px);
+
+color:#fff;
+line-height:1.6;
+font-weight:300;
+
+box-shadow:0 0 30px rgba(255,255,255,0.5);
+transition:.4s;
+}
+
+.note:hover{
+transform:scale(1.08) rotate(0deg);
+box-shadow:0 0 55px rgba(255,255,255,0.9);
+}
+
+/* Attractive scattered layout */
+.n1{top:90px; left:110px; transform:rotate(-7deg);}
+.n2{top:230px; right:120px; transform:rotate(8deg);}
+.n3{bottom:150px; left:200px; transform:rotate(-5deg);}
+.n4{bottom:90px; right:200px; transform:rotate(6deg);}
+
+/* ---------- CENTER PANEL ---------- */
+.center{
+background:rgba(0,0,0,0.55);
+padding:45px 70px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 0 40px rgba(255,255,255,0.6);
+z-index:2;
+}
+
+h1{
+font-size:46px;
+letter-spacing:3px;
+color:#fff4fa;
+}
+
+/* ---------- BUTTONS ---------- */
+button{
+padding:12px 26px;
+margin:10px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+font-weight:600;
+background:#ffe0ec;
+color:#7a004f;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+background:#ffc8de;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING IMAGE -->
+<img src="light.jpg" class="lightImg">
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="aankhon.mp3" type="audio/mpeg">
+</audio>
+
+<!-- TEXT BOXES -->
+<div class="note n1">
+Tho the month that brought a little sadness to me <br>
+still u were there with me so everything was at ease
+</div>
+
+<div class="note n2">
+yeah a little less happening month
+</div>
+
+<div class="note n3">
+Still a day without u was like hell!
+</div>
+
+<div class="note n4">
+the month was hard,situation tight still <br>
+u were there to make everything right
+</div>
+
+<!-- CENTER -->
+<div class="center">
+<h1>May</h1>
+
+<button onclick="playMusic()">▶ Play Music</button><br>
+
+<button onclick="goBack()">← Back</button>
+<button onclick="goNext()">Next →</button>
+</div>
+
+<script>
+
+/* Floating sparkle generator */
+for(let i=0;i<30;i++){
+let s=document.createElement("div");
+s.className="spark";
+s.style.left=Math.random()*100+"vw";
+s.style.animationDuration=(6+Math.random()*6)+"s";
+s.style.animationDelay=Math.random()*5+"s";
+document.body.appendChild(s);
+}
+
+/* Music + Navigation */
+function playMusic(){
+document.getElementById("bgMusic").play();
+}
+
+function goBack(){
+location.href="april2.html";
+}
+
+function goNext(){
+location.href="june2.html";
+}
+
+</script>
+
+</body>
+</html>

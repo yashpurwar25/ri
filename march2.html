@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>March</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  height:100vh;
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(-45deg,#42275a,#734b6d,#1f1c2c,#928dab);
+  background-size:400% 400%;
+  animation: bgmove 12s ease infinite;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  overflow:hidden;
+}
+
+/* Background Animation */
+@keyframes bgmove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Floating animation */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+  100%{transform:translateY(0);}
+}
+
+/* Sunflower Image */
+.sunflower{
+  position:absolute;
+  width:220px;
+  bottom:60px;
+  right:80px;
+  z-index:2;
+  animation: float 6s ease-in-out infinite;
+  pointer-events:none;
+}
+
+/* Center Box */
+.center{
+  background:rgba(0,0,0,0.55);
+  padding:45px 70px;
+  border-radius:30px;
+  text-align:center;
+  box-shadow:0 0 35px rgba(255,255,255,0.4);
+  z-index:5;
+}
+
+h1{
+  font-size:46px;
+  color:#ffd86b;
+  letter-spacing:2px;
+  margin-bottom:20px;
+}
+
+/* Buttons */
+button{
+  padding:12px 28px;
+  margin:10px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:16px;
+  background:#ffd86b;
+  color:#333;
+  font-weight:600;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ffca28;
+  transform:scale(1.05);
+}
+
+/* Clouds */
+.cloud{
+  position:absolute;
+  background:rgba(255,255,255,0.95);
+  color:#5a189a;
+  padding:22px 32px;
+  border-radius:70px;
+  box-shadow:0 0 25px rgba(255,255,255,0.9);
+  animation: float 5s ease-in-out infinite;
+  max-width:280px;
+  text-align:center;
+  font-size:15px;
+}
+
+/* Diagonal Layout */
+.c1{ top:60px; left:50%; transform:translateX(-50%); }
+.c2{ top:50%; right:60px; transform:translateY(-50%); }
+.c3{ bottom:60px; left:50%; transform:translateX(-50%); }
+.c4{ top:50%; left:60px; transform:translateY(-50%); }
+
+</style>
+</head>
+
+<body>
+
+<!-- Sunflower -->
+<img src="sunflower.jpg" class="sunflower">
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="die.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Clouds -->
+<div class="cloud c1">
+Had to say goodbye to you for real…  
+still remember that online farewell!
+</div>
+
+<div class="cloud c2">
+Sometimes I wonder how I ever survived  
+without texting you…  
+now I can’t even go 2 hours without you 🫶
+</div>
+
+<div class="cloud c3">
+Tried messaging you that day,  
+but you were tensed because  
+your brother was there 😔
+</div>
+
+<div class="cloud c4">
+Heard this song in a restaurant…  
+instantly thought of you  
+and stayed sad the whole day 💭
+</div>
+
+<!-- Center -->
+<div class="center">
+  <h1>March</h1>
+
+  <button onclick="playMusic()">▶ Play Music</button><br>
+
+  <button onclick="goBack()">← Back</button>
+  <button onclick="goNext()">Next →</button>
+</div>
+
+<script>
+function playMusic(){
+  document.getElementById("bgMusic").play();
+}
+
+function goNext(){
+  window.location.href="april2.html";
+}
+
+function goBack(){
+  window.location.href="feb2.html";
+}
+</script>
+
+</body>
+</html>

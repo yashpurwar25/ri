@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>January</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+background:radial-gradient(circle at center,#0f2027,#203a43,#2c5364);
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-family:Arial;
+overflow:hidden;
+}
+
+/* -------- Animated Stars Background -------- */
+.starbg{
+position:absolute;
+width:4px;
+height:4px;
+background:white;
+border-radius:50%;
+opacity:0.8;
+animation:twinkle 3s infinite alternate;
+z-index:1;
+}
+
+@keyframes twinkle{
+from{opacity:0.2; transform:scale(0.8);}
+to{opacity:1; transform:scale(1.4);}
+}
+
+/* -------- Teddy Image -------- */
+.teddy{
+position:absolute;
+bottom:30px;
+left:40px;
+width:240px;
+opacity:0.28;
+pointer-events:none;
+z-index:1;
+filter:drop-shadow(0 0 20px rgba(255,255,255,0.4));
+}
+
+/* -------- Floating Animation -------- */
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
+}
+
+/* -------- Text Cards -------- */
+.star{
+position:absolute;
+width:240px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+padding:22px;
+border-radius:25px;
+box-shadow:0 0 20px rgba(255,255,255,0.25);
+animation:float 6s ease-in-out infinite;
+z-index:2;
+text-align:center;
+font-size:15px;
+line-height:1.4;
+}
+
+/* Positions (balanced layout) */
+.s1{top:100px; left:150px;}
+.s2{top:140px; right:150px; animation-delay:1s;}
+.s3{bottom:140px; left:200px; animation-delay:2s;}
+.s4{bottom:100px; right:200px; animation-delay:3s;}
+
+/* -------- Center Panel -------- */
+.center{
+background:rgba(0,0,0,0.65);
+padding:45px 70px;
+border-radius:28px;
+text-align:center;
+z-index:3;
+box-shadow:0 0 25px rgba(0,0,0,0.6);
+}
+
+h1{
+font-size:44px;
+letter-spacing:2px;
+color:#ffd6ff;
+}
+
+button{
+padding:12px 26px;
+border:none;
+border-radius:25px;
+margin:10px;
+cursor:pointer;
+background:#ffd6ff;
+color:#222;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:#ffc2f2;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Teddy Image -->
+<img src="teddy.jpg" class="teddy">
+
+<!-- Animated Stars -->
+<div class="starbg" style="top:10%;left:20%"></div>
+<div class="starbg" style="top:25%;left:70%"></div>
+<div class="starbg" style="top:60%;left:40%"></div>
+<div class="starbg" style="top:75%;left:80%"></div>
+<div class="starbg" style="top:40%;left:10%"></div>
+<div class="starbg" style="top:85%;left:55%"></div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="HUA.mp3">
+</audio>
+
+<!-- Text Cards -->
+<div class="star s1">Januaryyyyyyyyy!!!!!!!!</div>
+
+<div class="star s2">
+Had a fight because i felt ignored bit i m sorry for that fight
+</div>
+
+<div class="star s3">
+and riiiiiiiiii u were loookinggggg sooooo beautiful in sareeeeee fr fr fr
+</div>
+
+<div class="star s4">
+1 year is just a beginning many more years to spend together
+</div>
+
+<!-- Center Controls -->
+<div class="center">
+<h1>January ✨</h1>
+
+<button onclick="playMusic()">▶ Play Music</button><br>
+
+<button onclick="goBack()">← Back</button>
+<button onclick="goNext()">Next →</button>
+</div>
+
+<script>
+function playMusic(){
+document.getElementById("bgMusic").play();
+}
+function goBack(){location.href="december2.html";}
+function goNext(){location.href="index2.html";}
+</script>
+
+</body>
+</html>
